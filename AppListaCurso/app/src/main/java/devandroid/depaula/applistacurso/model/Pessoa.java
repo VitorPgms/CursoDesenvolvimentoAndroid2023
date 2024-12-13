@@ -42,6 +42,16 @@ public class Pessoa {
         this.telefoneContato = telefoneContato;
     }
 
+    @Override //Estamos sobrescrevendo metodo to string
+    public String toString() {
+        return "Pessoa{" +
+                "primeiroNome='" + primeiroNome + '\'' +
+                ", sobreNome='" + sobreNome + '\'' +
+                ", cursoDesejado='" + cursoDesejado + '\'' +
+                ", telefoneContato='" + telefoneContato + '\'' +
+                '}';
+    }
+
     //Construtor
     public Pessoa(){
 
