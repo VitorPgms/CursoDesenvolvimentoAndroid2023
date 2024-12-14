@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome("Vitor"); //Atribui conteudo, dados, valores para o Objeto. Conforme o template
-        pessoa.setSobreNome("De Paula");
-        pessoa.setCursoDesejado("Android");
-        pessoa.setTelefoneContato("73-99989-8955");
+        //pessoa.setPrimeiroNome("Vitor"); //Atribui conteudo, dados, valores para o Objeto. Conforme o template
+        //pessoa.setSobreNome("De Paula");
+        //pessoa.setCursoDesejado("Android");
+        //pessoa.setTelefoneContato("73-99989-8955");
 
         outraPessoa = new Pessoa();
         outraPessoa.setPrimeiroNome("Marcos");
@@ -92,6 +92,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"Volte sempre", Toast.LENGTH_LONG).show();
                 finish();
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobreNome(editSobreNome.getText().toString());
+                pessoa.setCursoDesejado(editNomeCurso.getText().toString());
+                pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
+
+                Toast.makeText(MainActivity.this,"Dados Salvos"+pessoa.toString(), Toast.LENGTH_LONG).show();
+
             }
         });
 
