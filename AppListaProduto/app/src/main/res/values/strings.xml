@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppListaProduto</string>
+    <string name="lista_de_produto">Lista de Produto</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_cor">Cor</string>
+    <string name="hint_quantidade">Quantidade</string>
+    <string name="hint_preco">Preço</string>
+    <string name="btn_finalizar">Finalizar</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_limpar">Limpar</string>
+</resources>
