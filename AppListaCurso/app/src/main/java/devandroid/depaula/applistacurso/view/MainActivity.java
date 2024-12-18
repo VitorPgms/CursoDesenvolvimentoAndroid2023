@@ -14,9 +14,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.depaula.applistacurso.R;
+import devandroid.depaula.applistacurso.controller.PessoaController;
 import devandroid.depaula.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+    PessoaController controller;
 
     Pessoa pessoa;
     Pessoa outraPessoa;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        controller = new PessoaController();
 
         pessoa = new Pessoa();
 
@@ -97,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Dados Salvos" + pessoa.toString(), Toast.LENGTH_LONG).show();
 
+                controller.salvar(pessoa);
             }
         });
 
