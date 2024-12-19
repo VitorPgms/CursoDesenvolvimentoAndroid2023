@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                 controller.salvar(pessoa); //salva os registros em algum local
 
+                controller.salvar(pessoa);
             }
         });
 
