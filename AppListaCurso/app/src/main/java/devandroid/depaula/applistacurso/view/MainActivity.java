@@ -1,5 +1,6 @@
 package devandroid.depaula.applistacurso.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,11 @@ import devandroid.depaula.applistacurso.controller.PessoaController;
 import devandroid.depaula.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Consumindo SharedPreferences para salvar dados
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
+
     PessoaController controller;
 
     Pessoa pessoa;
@@ -42,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Salvando dados em preferencias
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = preferences.edit();
 
         controller = new PessoaController();
 
@@ -99,6 +109,13 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados Salvos" + pessoa.toString(), Toast.LENGTH_LONG).show();
+
+                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome", pessoa.getSobreNome());
+                listaVip.putString("cursoDesejado", pessoa.getCursoDesejado());
+                listaVip.putString("telefoneContato", pessoa.getTelefoneContato());
+                listaVip.apply();
+
 
                 controller.salvar(pessoa); //salva os registros em algum local
 
