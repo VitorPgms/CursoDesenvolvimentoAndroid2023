@@ -11,12 +11,13 @@ public class PessoaController {
     @NonNull
     @Override
     public String toString() {
-        Log.d("MVC_Controller", "Controller Iniciado");
+
+        Log.d("MVC_Controller","Controller iniciado...");
 
         return super.toString();
     }
 
     public void salvar(Pessoa pessoa) {
-        Log.d("MVC_Controller", "Salvo:"+pessoa.toString());
+        Log.d("MVC_Controller","Salvo"+pessoa.toString());
     }
 }

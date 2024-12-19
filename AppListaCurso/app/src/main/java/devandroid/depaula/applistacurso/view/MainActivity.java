@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         controller = new PessoaController();
 
         pessoa = new Pessoa();
@@ -100,8 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Dados Salvos" + pessoa.toString(), Toast.LENGTH_LONG).show();
 
-                controller.salvar(pessoa); //salva os registros em algum local
-
+                controller.salvar(pessoa);
             }
         });
 
