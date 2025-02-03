@@ -13,11 +13,11 @@ public class CursoController {
 
         listCursos = new ArrayList<Curso>();
 
-        listCursos.add(new Curso());
-        listCursos.add(new Curso());
-        listCursos.add(new Curso());
-        listCursos.add(new Curso());
-        listCursos.add(new Curso());
+        listCursos.add(new Curso("Java"));
+        listCursos.add(new Curso("Kotlin"));
+        listCursos.add(new Curso("HTML/CSS"));
+        listCursos.add(new Curso("Flutter"));
+        listCursos.add(new Curso("SQLite"));
 
 
         return listCursos;
