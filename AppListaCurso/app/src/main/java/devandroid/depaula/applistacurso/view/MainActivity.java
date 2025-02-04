@@ -1,11 +1,11 @@
 package devandroid.depaula.applistacurso.view;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,12 +14,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import devandroid.depaula.applistacurso.R;
 import devandroid.depaula.applistacurso.controller.CursoController;
 import devandroid.depaula.applistacurso.controller.PessoaController;
-import devandroid.depaula.applistacurso.model.Curso;
 import devandroid.depaula.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,12 +27,13 @@ public class MainActivity extends AppCompatActivity {
     CursoController cursoController;
 
     Pessoa pessoa;
-    List<Curso> listaDeCursos;
+    ArrayList<String> nomesDosCursos;
 
     EditText editPrimeiroNome;
     EditText editSobreNome;
     EditText editNomeCurso;
     EditText editTelefoneContato;
+    Spinner spinner;
 
     Button btnLimpar;
     Button btnSalvar;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         controller.toString();
 
         cursoController = new CursoController();
-        listaDeCursos = cursoController.getListaDeCursos();
+        nomesDosCursos = cursoController.dadosParaSpinner();
 
         pessoa = new Pessoa();
         controller.buscar(pessoa);
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         editSobreNome = findViewById(R.id.editSobreNome);
         editNomeCurso = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
+        spinner = findViewById(R.id.spinner);
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobreNome.setText(pessoa.getSobreNome());
